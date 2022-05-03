@@ -19,7 +19,8 @@ function HomeBuyer() {
 
   const [product, setProduct] = useState([])
   const getProduct = async () => {
-    let res = await request.get('/api/product')
+    let res = await request.get('/api/products?page=1')
+    console.log(res)
     if (res) {
       setProduct(res.products)
     }
